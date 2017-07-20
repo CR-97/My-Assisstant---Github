@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:background="@color/mywhite"
+              android:paddingTop="20dp"
+              android:paddingRight="10dp"
+              android:paddingLeft="10dp"
+              android:paddingBottom="20dp"
+              android:weightSum="1">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="What Are You Planning ?"
+        android:textSize="20sp"
+        android:textColor="@color/myheadertext"
+        android:layout_marginBottom="20dp"
+        android:id="@+id/textView4"
+        android:layout_gravity="center_horizontal" />
+
+    <EditText
+        android:id="@+id/add_plan"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginBottom="15dp"
+        android:layout_marginTop="5dp"
+        android:layout_weight="0.13"
+        android:background="@drawable/tealstroke"
+        android:padding="7dp"/>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+
+        <Button
+            android:layout_width="110dp"
+            android:layout_height="30dp"
+            android:text="Add Plan"
+            android:textSize="13sp"
+            android:textColor="@color/mywhite"
+            android:layout_marginRight="40dp"
+            android:background="@drawable/tealbg"
+            android:id="@+id/plan" />
+
+        <Button
+            android:layout_width="110dp"
+            android:layout_height="30dp"
+            android:text="Cancel"
+            android:textColor="@color/myteal"
+            android:textSize="13sp"
+            android:layout_marginLeft="40dp"
+            android:background="@drawable/tealstroke"
+            android:id="@+id/no_thank" />
+
+    </LinearLayout>
+
+</LinearLayout>

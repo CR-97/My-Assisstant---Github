@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="10dp"
+                android:background="@drawable/theme"
+                tools:context=".CreateFragment">
+
+    <LinearLayout
+        android:background="@android:color/transparent"
+        android:orientation="vertical"
+        android:paddingTop="20dp"
+        android:paddingRight="20dp"
+        android:paddingLeft="20dp"
+        android:paddingBottom="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/linearLayout"
+        android:weightSum="1">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/edittext_heading"
+            android:textColor="@color/myheadertext"
+            android:text="@string/app_name"
+            android:layout_marginTop="@dimen/edittext_textview_margin_down"
+            android:id="@+id/textView" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/tealstroke"
+            android:padding="7dp"
+            android:layout_marginTop="@dimen/edittext_textview_margin_top"
+            android:layout_marginBottom="@dimen/edittext_textview_margin_down"
+            android:id="@+id/create_title_edittext" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/edittext_heading"
+            android:textColor="@color/myheadertext"
+            android:text="@string/note"
+            android:layout_marginTop="@dimen/edittext_textview_margin_top"
+            android:id="@+id/textView2" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="@drawable/tealstroke"
+            android:id="@+id/create_note_edittext"
+            android:padding="7dp"
+            android:gravity="start"
+            android:layout_marginTop="@dimen/edittext_textview_margin_top"
+            android:layout_marginBottom="@dimen/edittext_textview_margin_down"/>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="@dimen/edittext_textview_margin_top"
+        android:layout_marginBottom="@dimen/edittext_textview_margin_down"
+        android:layout_gravity="center_horizontal"
+        android:weightSum="1">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/edittext_heading"
+            android:textColor="@color/myheadertext"
+            android:text= "My Mood"
+            android:layout_marginTop="@dimen/edittext_textview_margin_top"
+            android:id="@+id/textView3" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="75dp"
+            android:layout_marginTop="@dimen/edittext_textview_margin_top"
+            android:text="Weather"
+            android:textColor="@color/myheadertext"
+            android:textSize="@dimen/edittext_heading"/>
+
+    </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="@dimen/edittext_textview_margin_top"
+            android:layout_marginBottom="@dimen/edittext_textview_margin_down"
+            android:layout_gravity="center_horizontal"
+            android:weightSum="1">
+
+            <Spinner
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/edittext_textview_margin_top"
+                android:textColor="@color/mygreen"
+
+                android:id="@+id/create_mood"/>
+
+            <Spinner
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="100dp"
+                android:layout_marginTop="@dimen/edittext_textview_margin_top"
+                android:textColor="@color/mygreen"
+                android:id="@+id/create_weather"/>
+
+            </LinearLayout>
+
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="@dimen/edittext_textview_margin_top"
+            android:layout_marginBottom="@dimen/edittext_textview_margin_down"
+            android:layout_gravity="center_horizontal">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Create"
+                android:textColor="@color/mywhite"
+                android:layout_weight="1"
+                android:layout_margin="@dimen/button_margin"
+                android:background="@drawable/tealbg"
+                android:id="@+id/create" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Clear"
+                android:textColor="@color/mywhite"
+                android:layout_weight="1"
+                android:layout_margin="@dimen/button_margin"
+                android:background="@drawable/tealbg"
+                android:id="@+id/clear" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

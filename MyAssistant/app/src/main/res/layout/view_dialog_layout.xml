@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:background="@color/mywhite"
+              android:padding="20dp">
+    <RelativeLayout
+     android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Today's Pending Work"
+            android:textColor="@color/myheadertext"
+            android:textSize="25sp"
+            android:layout_gravity="left"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="10dp"
+            android:id="@+id/view_title_textview" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_mood_happy"
+            android:id="@+id/imageView2"
+            android:layout_alignTop="@+id/view_title_textview"
+            android:layout_toRightOf="@+id/view_title_textview"
+            android:layout_toEndOf="@+id/view_title_textview"
+            android:layout_marginLeft="11dp"
+            android:layout_marginStart="11dp"
+            android:layout_alignBottom="@+id/view_title_textview"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_weather_sunny"
+            android:layout_marginLeft="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_toRightOf="@+id/imageView2"
+            android:layout_toEndOf="@+id/imageView2"
+            android:layout_alignBottom="@+id/imageView2"
+            android:layout_alignTop="@+id/imageView2"
+            android:id="@+id/view_weather"/>
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:background="@drawable/dashedline"
+        android:layout_height="2dp"></LinearLayout>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Get a girl - 404 LOL not possible, Revenge is a funnything. I a not going to buy an Apple product."
+        android:textColor="@color/mybodytext"
+        android:textSize="16sp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="20dp"
+        android:id="@+id/view_note_textview" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:background="@drawable/dashedline"
+        android:layout_height="2dp"></LinearLayout>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Urgent Note"
+        android:textColor="@color/myheadertext"
+        android:textSize="17sp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"
+        android:id="@+id/view_date" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Created at 29:30"
+        android:id="@+id/view_time" />
+
+
+
+
+</LinearLayout>

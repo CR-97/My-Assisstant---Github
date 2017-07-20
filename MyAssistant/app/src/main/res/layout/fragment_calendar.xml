@@ -1,0 +1,24 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:gravity="center"
+    android:background="@drawable/theme"
+    tools:context="com.cr97.myassistant.CalendarFragment">
+
+    <com.prolificinteractive.materialcalendarview.MaterialCalendarView
+        android:layout_width="368dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/calendarView"
+        android:background="@drawable/tealstroke"
+        app:mcv_showOtherDates="all"
+        app:mcv_selectionColor="#6FE7DD"
+        tools:layout_editor_absoluteY="0dp"
+        tools:layout_editor_absoluteX="8dp">
+
+    </com.prolificinteractive.materialcalendarview.MaterialCalendarView>
+
+</RelativeLayout>

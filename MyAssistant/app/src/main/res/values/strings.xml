@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">MyAssistant</string>
+    <string name="title_activity_note">NoteActivity</string>
+    <string name="action_settings">Settings</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="edit_description">Your Description</string>
+    <string name="edit_title">Title</string>
+    <string name="todo">My Plan</string>
+    <string name="high">High</string>
+    <string name="medium">Medium</string>
+    <string name="low">Low</string>
+    <string name="title">My Title</string>
+    <string name="remark">My Remark</string>
+    <string name="create">Create</string>
+    <string name="note">My Diary</string>
+    <string name="cal">My Calendar</string>
+    <string name="mood">My Mood</string>
+    <string name="weather">Weather</string>
+
+
+</resources>
