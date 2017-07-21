@@ -24,6 +24,7 @@ import java.util.List;
  */
 
 public class PlanFragment extends Fragment implements View.OnClickListener {
+    //declaration
     private View mView;
 
     private FloatingActionButton mFab;
@@ -41,11 +42,12 @@ public class PlanFragment extends Fragment implements View.OnClickListener {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         mView = inflater.inflate(R.layout.fragment_plan, container, false);
 
-        //Refesh Plan ListView
+
         mFab = (FloatingActionButton) mView.findViewById(R.id.fab);
         setListener();
 
         mListView = (ListView) mView.findViewById(R.id.plistView);
+        //Refesh Plan ListView
         mDbHelper = new DbHelper(getActivity().getApplicationContext());
         loading();
 
@@ -56,12 +58,14 @@ public class PlanFragment extends Fragment implements View.OnClickListener {
         mFab.setOnClickListener(this);
     }
 
+    //set adapter for plan fragment
     private void refreshList() {
         ArrayAdapter<Plan> planAdapter = new PlanAdapter();
         mListView.setAdapter(planAdapter);
 
     }
 
+    //load all data from database
     private void loading(){
         mDbHelper = new DbHelper(getActivity());
         if(!(mDbHelper.getPlanCount() == 0)){
@@ -70,6 +74,7 @@ public class PlanFragment extends Fragment implements View.OnClickListener {
         refreshList();
     }
 
+    //adapter for plan fragment
     private class PlanAdapter extends ArrayAdapter<Plan>{
 
         public PlanAdapter(){
@@ -88,6 +93,7 @@ public class PlanFragment extends Fragment implements View.OnClickListener {
             TextView titletext = (TextView) view.findViewById(R.id.taskDescription);
             titletext.setText(currentPlan.get_task());
 
+            // delete item function
             Button delete = (Button)view.findViewById(R.id.done);
             delete.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -111,6 +117,7 @@ public class PlanFragment extends Fragment implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
+        //when floating action button clicked
         if(v == mFab) {
             final Dialog adddialog = new Dialog(getActivity());
             adddialog.setContentView(R.layout.add_plan_layout);
@@ -121,7 +128,7 @@ public class PlanFragment extends Fragment implements View.OnClickListener {
             final EditText plan = (EditText) adddialog.findViewById(R.id.add_plan);
             mDbHelper = new DbHelper(getActivity());
 
-
+            //create plan function
             confirm.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -137,7 +144,7 @@ public class PlanFragment extends Fragment implements View.OnClickListener {
                     adddialog.cancel();
                 }
             });
-
+            //cancel button function
             cancel.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

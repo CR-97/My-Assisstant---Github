@@ -50,7 +50,7 @@ public class CalendarFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_calendar, container, false);
-
+        //Calendar function and when clicked
         MaterialCalendarView materialCalendarView =(MaterialCalendarView) view.findViewById(R.id.calendarView);
 
         materialCalendarView.state().edit()

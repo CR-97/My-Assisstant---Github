@@ -11,7 +11,7 @@ import android.view.WindowManager;
 public class SplashActivity extends AppCompatActivity {
 
     private static final String TAG = SplashActivity.class.getSimpleName();
-
+    //set time length
     private final int SPLASH_DISPLAY_LENGTH = 3000;
 
     @Override
@@ -21,7 +21,7 @@ public class SplashActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
-
+        //set no action bar for this activity
         ActionBar actionBar = getSupportActionBar();
         if(null != actionBar){
             actionBar.hide();

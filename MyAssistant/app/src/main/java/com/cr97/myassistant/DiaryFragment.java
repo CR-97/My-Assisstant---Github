@@ -48,6 +48,7 @@ import java.util.Locale;
 
 public class DiaryFragment extends Fragment implements View.OnClickListener {
 
+    //declaration
     ListView listView;
     DbHelper mDbHelper;
 
@@ -89,11 +90,12 @@ public class DiaryFragment extends Fragment implements View.OnClickListener {
         return view;
     }
 
+    //set adapter for diart fragment
     private void refreshDiary() {
         ArrayAdapter<Assistant> diaryAdapter = new DiaryAdapter();
         listView.setAdapter(diaryAdapter);
     }
-
+    // load all data in databaase
     private void loading(){
         mDbHelper = new DbHelper(getActivity());
         if(!(mDbHelper.getDiaryCount() == 0)){
@@ -106,6 +108,7 @@ public class DiaryFragment extends Fragment implements View.OnClickListener {
         mfab.setOnClickListener(this);
     }
 
+    //adapter for the diary fragment
     private class DiaryAdapter extends ArrayAdapter<Assistant>{
         public DiaryAdapter(){
             super(getActivity(),R.layout.list_item_layout , diary_list);
@@ -169,6 +172,7 @@ public class DiaryFragment extends Fragment implements View.OnClickListener {
             Button edit = (Button)view.findViewById(R.id.view);
             Button delete = (Button)view.findViewById(R.id.delete);
 
+            //view button on list item function
             edit.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -235,6 +239,7 @@ public class DiaryFragment extends Fragment implements View.OnClickListener {
                 }
             });
 
+            //delete button on liist item function
             delete.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -275,6 +280,7 @@ public class DiaryFragment extends Fragment implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
+        // when the floating button clicked
         if (v == mfab) {
             Toast.makeText(getActivity(),"Creating New Diary" ,Toast.LENGTH_SHORT).show();
             final Dialog createDialog = new Dialog(getActivity());
@@ -327,7 +333,7 @@ public class DiaryFragment extends Fragment implements View.OnClickListener {
 
             mDbHelper = new DbHelper(getActivity());
 
-
+            // create diary function
             create.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -381,6 +387,8 @@ public class DiaryFragment extends Fragment implements View.OnClickListener {
 
                 }
             });
+
+            //cancel button function
             cancel.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

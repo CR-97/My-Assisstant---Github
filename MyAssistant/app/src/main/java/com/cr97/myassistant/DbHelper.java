@@ -17,11 +17,11 @@ import java.util.List;
 
 
 public class DbHelper extends SQLiteOpenHelper {
-
+    //database version
     private static final int DATABASE_VERSION = 1;
-    int p=0;
-
+    //database name
     private static final String DATABASE_NAME = "DiaryDB";
+    // diary table
     private static final String TableName = "myDiary",
             TableId = "_id",
             TableTitle = "title",
@@ -31,7 +31,7 @@ public class DbHelper extends SQLiteOpenHelper {
             TableTime = "time",
             TableMood = "mood",
             TableWeather = "weather";
-
+    //plan table
     private static final String PlanTable = "myPlan",
             PlanId = "_planid",
             PlanTask = "task";
@@ -43,6 +43,7 @@ public class DbHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
+        //create diary table
         db.execSQL("CREATE TABLE " + TableName + "("
                 + TableId + " INTEGER PRIMARY KEY AUTOINCREMENT,"
                 + TableTitle + " TEXT NOT NULL,"
@@ -52,12 +53,13 @@ public class DbHelper extends SQLiteOpenHelper {
                 + TableTime + " TEXT,"
                 + TableMood + " TEXT,"
                 + TableWeather + " TEXT)");
-
+        //create plan table
         db.execSQL("CREATE TABLE " + PlanTable + "("
                 + PlanId + " INTEGER PRIMARY KEY AUTOINCREMENT,"
                 + PlanTask + " TEXT)");
     }
 
+    //upgrade database function
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS " + TableName);
@@ -67,12 +69,12 @@ public class DbHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    // Inserting product into table
+    // Inserting diary into table
     public void InsertDiary(Assistant assistant) {
         SQLiteDatabase db = getWritableDatabase();
 
         ContentValues values = new ContentValues(); // create an instance of ContentValues
-        values.put(TableTitle, assistant.get_title()); // parameters are (key, value) but the key = columnName in our Database Table
+        values.put(TableTitle, assistant.get_title());
         values.put(TableNote, assistant.get_note());
 
         values.put(TableDate, assistant.get_date());
@@ -86,7 +88,7 @@ public class DbHelper extends SQLiteOpenHelper {
         db.close();
     }
 
-
+    //insert plan to table
     public void insertplan(Plan plan) {
         SQLiteDatabase db = getWritableDatabase();
 
@@ -97,16 +99,7 @@ public class DbHelper extends SQLiteOpenHelper {
         db.close();
     }
 
-//        public void EditNote(int id, String title, String note, String remark) {
-//
-//            ContentValues values = new ContentValues(); // create an instance of ContentValues
-//            values.put("title", title); // parameters are (key, value) but the key = columnName in our Database Table
-//            values.put("note", note);
-//
-//            //db.update removes the risk of SQL Injection
-//            db.update(TableName, values, "_id = ?", new String[]{"" + id});
-//        }
-
+    //get diary count
     public int getDiaryCount(){
        SQLiteDatabase db = getReadableDatabase();
         Cursor cursor = db.rawQuery("SELECT * FROM " + TableName, null);
@@ -117,6 +110,7 @@ public class DbHelper extends SQLiteOpenHelper {
         return count;
     }
 
+    //get plan count
     public int getPlanCount(){
         SQLiteDatabase db = getReadableDatabase();
         Cursor cursor = db.rawQuery("SELECT * FROM " + PlanTable, null);
@@ -127,37 +121,22 @@ public class DbHelper extends SQLiteOpenHelper {
         return count;
     }
 
+    //delete diary in table
     public void deleteDiary(Assistant assistant) {
         SQLiteDatabase db = getWritableDatabase();
         db.delete(TableName, TableTitle + "=?", new String[] { String.valueOf(assistant.get_title()) });
         db.close();
     }
 
+    //delete plan in table
     public void deleteplan(Plan plan) {
         SQLiteDatabase db = getWritableDatabase();
         db.delete(PlanTable, PlanTask + "=?", new String[] { String.valueOf(plan.get_task()) });
         db.close();
     }
 
-    // Showing all rows from table
-//    public void showNote(List<Integer> ids_list, List<String> titles_list, List<String> notes_list, List<String> remark_list, List<String> created_list, List<String> day_list, List<String> time_list) {
-//
-//        // this will execute select query
-//        Cursor cursor = db.rawQuery("SELECT * FROM " + TableName + " ORDER BY _id DESC", null);
-//        // getting data from all rows
-//        while (cursor.moveToNext()) {
-//            //filling up the arraylist with database coloumns
-//            ids_list.add(cursor.getInt(0));
-//            titles_list.add(cursor.getString(1));
-//            notes_list.add(cursor.getString(2));
-//            remark_list.add(cursor.getString(3));
-//            created_list.add(cursor.getString(4));
-//            day_list.add(cursor.getString(5));
-//            time_list.add(cursor.getString(6));
-//        }
-//
-//    }
 
+    //get all diary data
     public List<Assistant> getAllDiary(){
         List<Assistant> assistantList = new ArrayList<Assistant>();
 
@@ -186,6 +165,7 @@ public class DbHelper extends SQLiteOpenHelper {
 
     }
 
+    //get all plan data
     public List<Plan> getAllPlan(){
         List<Plan> planList = new ArrayList<Plan>();
 
@@ -203,18 +183,6 @@ public class DbHelper extends SQLiteOpenHelper {
 
         return planList;
     }
-//    public void showPlan(List<Integer> pids_list, List<String> task_list) {
-//
-//        // this will execute select query
-//        Cursor cursor = db.rawQuery("SELECT * FROM " + PlanTable + " ORDER BY _planid DESC", null);
-//        // getting data from all rows
-//        while (cursor.moveToNext()) {
-//            //filling up the arraylist with database coloumns
-//            pids_list.add(cursor.getInt(0));
-//            task_list.add(cursor.getString(1));
-//        }
-//    }
-
 
 }
 

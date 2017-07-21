@@ -44,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //setup the fragment
         final Fragment homeFragment = new DiaryFragment();
         final Fragment calendarFragment = new CalendarFragment();
         final Fragment planFragment = new PlanFragment();
@@ -56,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
+                //set bottom navigation bar for fragment transaction
                 FragmentManager fragmentManager = getSupportFragmentManager();
 
                 if (item.getItemId() == R.id.action_item1) {
@@ -67,17 +69,13 @@ public class MainActivity extends AppCompatActivity {
                 } else if (item.getItemId() == R.id.action_item3) {
                     FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                     fragmentTransaction.replace(R.id.fragmentContainer, planFragment).commit();
-
-//                } else if (item.getItemId() == R.id.perfilItem) {
-//                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-//                    fragmentTransaction.replace(R.id.fragmentContainer, profileFragment).commit();
-
                 }
                 return true;
             }
         });
     }
 
+    //click back button twice to exit function
     @Override
     public void onBackPressed() {
         if (doubleBackToExitPressedOnce) {
